@@ -21,6 +21,42 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
 
 # In-memory activity database
 activities = {
+    "Soccer Team": {
+        "description": "Join the school soccer team for practice and matches",
+        "schedule": "Wednesdays and Fridays, 4:00 PM - 5:30 PM",
+        "max_participants": 18,
+        "participants": []
+    },
+    "Basketball Club": {
+        "description": "Practice basketball skills and compete in games",
+        "schedule": "Tuesdays and Thursdays, 5:00 PM - 6:30 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Art Club": {
+        "description": "Explore painting, drawing, and other visual arts",
+        "schedule": "Mondays, 3:30 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": []
+    },
+    "Drama Society": {
+        "description": "Participate in acting, stage production, and school plays",
+        "schedule": "Fridays, 4:00 PM - 6:00 PM",
+        "max_participants": 20,
+        "participants": []
+    },
+    "Mathletes": {
+        "description": "Compete in math competitions and solve challenging problems",
+        "schedule": "Thursdays, 3:30 PM - 4:30 PM",
+        "max_participants": 10,
+        "participants": []
+    },
+    "Science Club": {
+        "description": "Conduct experiments and explore scientific topics",
+        "schedule": "Wednesdays, 3:30 PM - 4:30 PM",
+        "max_participants": 14,
+        "participants": []
+    },
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
@@ -61,6 +97,7 @@ def signup_for_activity(activity_name: str, email: str):
 
     # Get the specific activity
     activity = activities[activity_name]
+    # Validate student is not already signed up
 
     # Add student
     activity["participants"].append(email)
